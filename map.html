@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片地圖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCKmaCnrWoHzGzZdQAoYuZRxF9qMK6D5c&v=beta&libraries=marker&callback=initMap"></script> -->
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDauS6gPn7gb_hIGnEaAb4q4bpcby6_ZdQ&callback=initMap&v=beta&libraries=marker"
+        defer></script>
+    <link rel="stylesheet" href="mapicon.css">
+</head>
+<style>
+    #map {
+        height: 500px;
+        width: 750px;
+        position: fixed;
+        left: 20px;
+        top: 50px;
+    }
+</style>
+<script>
+    let map;
+
+    function initMap() {
+        const taiwan = { lat: 25.03432308378379, lng: 121.56400746396999 };
+        const map = new google.maps.Map($('#map').get(0), {
+            zoom: 12,
+            center: taiwan,
+            mapId: 'd6a62d7531c01abb'
+        });
+
+        const photo = {
+            TAI: {
+                icon: "/img/mapicon/IMG_9943.JPG",
+            },
+            PEI: {
+                icon: "/img/mapicon/IMG_9944.JPG",
+            },
+
+        };
+        const features = [
+            {
+                id: 'TAI',
+                position: new google.maps.LatLng(25.071016573544686, 121.53847225405505),
+                type: "TAI",
+            },
+            {
+                id: "PEI",
+                position: new google.maps.LatLng(24.972025104394596, 121.49801277684561),
+                type: "PEI",
+            },
+        ];
+        let marker;
+
+        for (let i = 0; i < features.length; i++) {
+            var icon = {
+                url: photo[features[i].type].icon, // 使用原本的圖示 URL
+                scaledSize: new google.maps.Size(50, 50), // 設置圖示大小
+                origin: new google.maps.Point(0, 0), // 設置圖示起點
+                anchor: new google.maps.Point(25, 25), // 設置圖示錨點
+                borderRadius: '50%' // 設置圖示邊框半徑
+            };
+
+            marker = new google.maps.Marker({
+                position: features[i].position,
+                icon: icon,
+                map: map,
+                id: features[i].id
+            });
+        }
+
+    }
+    window.initMap = initMap;
+</script>
+
+<body>
+
+    <div id="map"></div>
+    <!-- 載入地圖 -->
+    <!-- key位置在key=到&callback之間 -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+/* IMG{
+  
+        border-radius: 50%;
+        max-width: 80px;
+        max-height: 80px;
+    
+} */
+
+.round-marker {
+      border-radius: 50%;
+      /* 可以添加其他樣式 */
+      background-color: blue;
+      max-width: 80px;
+      max-height: 80px;
+    }

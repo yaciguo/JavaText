@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/irene17.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="/js/json.js"></script>
+<title></title>
+
+<script>
+  let jsonObj = JSON.parse(json);
+  // console.log(obj["myself"][0]["content"]);
+  // document.write(jsonObj["myself"][0]["content"]);
+
+  // 點選showImages1會跳到台北網頁
+  function linkviewpage() {
+    var url = "http://127.0.0.1:5502/irene17.html";
+    window.open(url, "_self");
+  }
+  // 跳到主畫面
+  // function homelink(containerId) {
+  //   var url = "http://127.0.0.1:5502/home.html";
+  //   window.open(url, "_self");
+  // }
+
+  // 點選showImages4會跳到人像網頁
+  function showImages4(containerId) {
+    var url = "http://127.0.0.1:5502/model.html";
+    window.open(url, "_self");
+  }
+
+  // 點選showImages5會跳到貓咪網頁
+  function showImages5(containerId) {
+    var url = "http://127.0.0.1:5502/animal.html";
+    window.open(url, "_self");
+  }
+
+
+</script>
+
+<body>
+  <div class="container">
+    <h4 style="font-size:30px; ">Irene's photographs</h4>
+    <div>
+      <div id="comp-l2q76l12">
+        <ul class="nav justify-content-center">
+          <!-- style="cursor: pointer" 手型鼠標 -->
+          <li class="nav-item ">
+            <a class="nav-link" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/home.html"
+              target="_self">
+              HOME
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" style="cursor: pointer;color:#807c7c" href="#">
+              ABOUT<img src="/img/_MG_8479.jpg" class="myself-jpg">
+            </a>
+          </li>
+          <!-- aria-expanded:表示展開狀態 預設是auto  先刪除-->
+          <!-- a class="nav-link dropdown-toggle" 的dropdown-toggle代表文字旁的三角形下拉功能 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" data-bs-toggle="dropdown" onclick="linkviewpage()"
+              style="cursor: pointer;color:#807c7c">
+              SCENERY
+            </a>
+            <ul class="dropdown-menu" style="cursor: pointer">
+              <li onmouseover="this.style.fontSize='1.2em'"
+                onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Taipei</li>
+              <li onmouseover="this.style.fontSize='1.2em'"
+                onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">NewTaipei</li>
+              <li onmouseover="this.style.fontSize='1.2em'"
+                onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Japan</li>
+              <li onclick="showImages7('imgContainer7')" onmouseover="this.style.fontSize='1.2em'"
+                onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Mountain&Sea</li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/model.html"
+              target="_self">
+              MODEL</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+              href="http://127.0.0.1:5502/animal.html" onclick="showImages5('imgContainer5')">CAT</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+              href="http://127.0.0.1:5502/map.html">MAP</a>
+          </li>
+        </ul>
+      </div>
+
+      <div style="position: relative; width: 200px; height: 40px;">
+        <div style="position: absolute; right:0px; left: 20px; bottom: 0px;font-size:25px;">About Me</div>
+        <br><br><br>
+        <div id="data" style="position: absolute;font-size: 20px; width: 500px;top: 200px;left: 20px;"></div>
+        <script>
+          window.onload = function () {
+            let jsonObj = JSON.parse(json);
+            let content = jsonObj["myself"][0]["content"];
+            document.getElementById("data").innerHTML = content;
+          };
+        </script>
+      </div>
+      <hr width="500px">
+
+
+    </div>
+    <div id="imgContainer1"></div>
+    <div id="imgContainer2"></div>
+    <div id="imgContainer3"></div>
+    <div id="imgContainer4"></div>
+    <div id="imgContainer5"></div>
+    <div id="imgContainer6"></div>
+
+
+
+
+  </div>
+</body>
+
+</html>

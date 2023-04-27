@@ -1,0 +1,197 @@
+h4 {
+  padding-top: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+ul.dropdown-menu :hover {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  font-size: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link{
+  font-size: 20px;
+}
+
+/* 設置圖片容器為 flex 布局 */
+#imgContainer1,
+#imgContainer2,
+#imgContainer3,
+#imgContainer4,
+#imgContainer5,
+#imgContainer6, 
+#imgContainer7 {
+  display: flex;
+  flex-wrap: wrap;
+    position: relative;
+  display: inline-block;
+
+}
+
+/* 設置每個圖片元素的寬度和高度 */
+#imgContainer1 img,
+#imgContainer2 img,
+#imgContainer3 img,
+#imgContainer4 img,
+#imgContainer5 img,
+#imgContainer6 img ,
+#imgContainer7 img {
+  width: 33%;
+  /* 每個圖片佔容器寬度的三分之一 */
+  padding: 5px;
+  /* 圖片間距 */
+  box-sizing: border-box;
+  /* 考慮邊框和內邊距的盒模型 */
+  object-fit: contain;
+  /* 設置圖片等比例縮放填充方式 */
+}
+
+#imgContainer1 img:hover,
+#imgContainer2 img:hover,
+#imgContainer3 img:hover,
+#imgContainer4 img:hover,
+#imgContainer5 img:hover,
+#imgContainer6 img:hover,
+#imgContainer7 img:hover {
+box-shadow: 1px 2px 4px rgba(0,0,0,0.9);
+border: 0;
+/* 设置阴影的偏移量、模糊半径、颜色和透明度 */
+}
+
+
+/* 輪播圖 */
+
+.image-container,
+.image-newtaipei,
+.image-japan,
+.image-model,
+.image-cat,
+.image-sea{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 100vw;
+  /* height: 100vh; */
+  align-items: center;
+  justify-content: center;
+}
+
+#taipeiCarousel,
+#newTaipeiCarousel,
+#japanCarousel,
+#modelCarousel,
+#catCarousel,
+#seaCarousel{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 100vw;
+  /* height: 100vh; */
+  align-items: center;
+  justify-content: center;
+}
+
+#carouselExampleCaptions,
+#carouselExample,
+#japanExample,
+#modelExample,
+#catExample,
+#seaExample {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* 關閉按鈕的樣式 */
+.fullscreen-image-close {
+  position: absolute;
+  /* 設置為絕對定位，以便調整關閉按鈕的位置 */
+  top: 10px;
+  /* 右上角位置 */
+  right: 10px;
+  background-color: transparent;
+  /* 設置背景顏色為透明 */
+  border: none;
+  /* 去掉邊框 */
+  color: white;
+  /* 設置文字顏色為白色 */
+  font-size: 24px;
+  /* 設置文字大小 */
+  cursor: pointer;
+  /* 設置為指針類型，以便用戶可以點擊 */
+}
+
+/* 到時候更換自己的照片 */
+.myself-jpg {
+  position: fixed;
+  top: 200px;
+  right: 250px;
+  width: 250px;
+  /*设置图像宽度*/
+  height: 380px;
+  /*根据比例自动设置图像高度*/
+  margin: 10px;
+  /*设置图像与边框之间的距离*/
+  
+}
+
+.myself-title {
+  left: 40px;
+  bottom: 10px;
+  font-size: 40px;
+}
+
+.toggle {
+  color: dimgray;
+}
+
+/* home照片 */
+.fit {
+
+  width: 1000px;
+  height: 300px;
+
+}
+
+.parent {
+  justify-content: center; 
+  align-content: center;      
+  flex-wrap: wrap;
+  position: relative;
+  top: 60px;
+
+}
+
+.child {
+
+  display: flex;
+  position: relative;
+  justify-content: center;
+  left: 10px;
+  top: 50px;
+  font-size: 20px;
+}
+
+hr {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* style.css檔內容 */

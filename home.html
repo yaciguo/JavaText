@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/irene17.css">
+</head>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<title></title>
+<script>
+
+  // 點選linkviewpage會跳到風景網頁 可以成功
+  function linkviewpage() {
+    var url = "http://127.0.0.1:5502/irene17.html";
+    window.open(url, "_self");
+  }
+
+  // 點選showImages4會跳到人像網頁
+  function linkmodelpage() {
+    var url = "http://127.0.0.1:5502/model.html";
+    window.open(url, "_self");
+  }
+
+  // 點選showImages5會跳到貓咪網頁
+  function linkcatpage() {
+    var url = "http://127.0.0.1:5502/animal.html";
+    window.open(url, "_self");
+  }
+
+
+</script>
+
+<body>
+  <div class="container">
+    <h4 style="font-size:30px; ">Irene's photographs</h4>
+    <div class="jumbotron ">
+      <ul class="nav justify-content-center">
+        <li class="nav-item ">
+          <a class="nav-link" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/home.html"
+            target="_self">
+            HOME
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link aboutme" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/about.html"
+            target="_self">
+            ABOUT </a>
+        </li>
+        <!-- aria-expanded:表示展開狀態 預設是auto  先刪除-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" data-bs-toggle="dropdown" onclick="linkviewpage()"
+            style="cursor: pointer;color:#807c7c">
+            SCENERY
+          </a>
+          <ul class="dropdown-menu" style="cursor: pointer">
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Taipei</li>
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">NewTaipei</li>
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Japan</li>
+            <li onclick="showImages7('imgContainer7')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Mountain&Sea</li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/model.html"
+            target="_self">
+            MODEL </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            href="http://127.0.0.1:5502/animal.html">CAT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            href="http://127.0.0.1:5502/map.html">MAP</a>
+        </li>
+      </ul>
+    </div>
+    <div class="parent">
+      <div class="child">生活是一種旅行<br>每天的日常生活 雖然很平常 很平凡 透過旅行，在日常中尋找不同的色彩</div>
+      <img src="/img/homepag2.jpg" style="object-fit:contain" class="fit">
+    </div>
+</body>
+
+</html>

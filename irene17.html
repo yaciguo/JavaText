@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/irene17.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- <link rel="stylesheet" href="/css/newtaipei.css" /> -->
+</head>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<title></title>
+<script src="/js/all.js"></script>
+
+
+<script>
+
+  // 跳到主畫面
+  function homelink(containerId) {
+    var url = "http://127.0.0.1:5502/home.html";
+    window.open(url, "_self");
+  }
+  // 點選showImages4會跳到人像網頁
+  function showImages4(containerId) {
+    var url = "http://127.0.0.1:5502/model.html";
+    window.open(url, "_self");
+  }
+
+  // 點選showImages5會跳到貓咪網頁
+  function showImages5(containerId) {
+    var url = "http://127.0.0.1:5502/animal.html";
+    window.open(url, "_self");
+  }
+
+  // 風景/台北
+  function showImages1(containerId) {
+    let container1 = document.getElementById(containerId);
+    container1.innerHTML = '<img src="/img/風景/台北/IMG_9943.JPG" onclick="enlargeImage(this)" ><img src="/img/風景/台北/IMG_9944.JPG" onclick="enlargeImage(this)">';
+    // 加上以下四句可以呈現與點選相符的圖片，不會重複出現，block是顯示，none是隱藏
+    let containerA = document.getElementById("imgContainer1");
+    let container2 = document.getElementById("imgContainer2");
+    let container3 = document.getElementById("imgContainer3");
+    let container4 = document.getElementById("imgContainer4");
+    let container5 = document.getElementById("imgContainer5");
+    let container6 = document.getElementById("imgContainer6");
+    let container7 = document.getElementById("imgContainer7");
+    container1.style.display = "block";
+    container2.style.display = "none";
+    container6.style.display = "none";
+    container7.style.display = "none";
+  }
+
+
+
+  // 風景/新北
+  function showImages2(containerId) {
+    let container2 = document.getElementById(containerId);
+    container2.innerHTML = '<img src="/img/風景/新北/IMG_0001.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_0002.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_0003.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_0004.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_0005.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_1037.JPG"onclick="enlargeImage2(this)"><img src="/img/風景/新北/IMG_9298.JPG"onclick="enlargeImage2(this)">';
+    // 加上以下四句可以呈現與點選相符的圖片，不會重複出現
+    let container1 = document.getElementById("imgContainer1");
+    let containerB = document.getElementById("imgContainer2");
+    let container3 = document.getElementById("imgContainer3");
+    let container4 = document.getElementById("imgContainer4");
+    let container5 = document.getElementById("imgContainer5");
+    let container6 = document.getElementById("imgContainer6");
+    let container7 = document.getElementById("imgContainer7");
+    container1.style.display = "none";
+    container2.style.display = "block";
+    container6.style.display = "none";
+    container7.style.display = "none";
+  }
+
+
+  // 風景/日本
+  function showImages6(containerId) {
+    let container6 = document.getElementById(containerId);
+    container6.innerHTML = '<img src="/img/風景/日本/IMG_4550.JPG"onclick="enlargeImage3(this)"><img src="/img/風景/日本/IMG_5777.JPG"onclick="enlargeImage3(this)"><img src="/img/風景/日本/IMG_5821.JPG"onclick="enlargeImage3(this)"><img src="/img/風景/日本/IMG_8606.JPG"onclick="enlargeImage3(this)">';
+    let container1 = document.getElementById("imgContainer1");
+    let container2 = document.getElementById("imgContainer2");
+    let container3 = document.getElementById("imgContainer3");
+    let container4 = document.getElementById("imgContainer4");
+    let container5 = document.getElementById("imgContainer5");
+    let containerF = document.getElementById("imgContainer6");
+    let container7 = document.getElementById("imgContainer7");
+    container1.style.display = "none";
+    container2.style.display = "none";
+    container6.style.display = "block";
+    container7.style.display = "none";
+  }
+
+  // 風景/山海
+  function showImages7(containerId) {
+    let container7 = document.getElementById(containerId);
+    container7.innerHTML = '<img src="/img/風景/山海/IMG_2004.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2005.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2006.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2008.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2009.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2010.JPG"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2011.jpg"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2012.jpg"onclick="enlargeImage6(this)"><img src="/img/風景/山海/IMG_2013.jpg"onclick="enlargeImage6(this)">';
+    let container1 = document.getElementById("imgContainer1");
+    let container2 = document.getElementById("imgContainer2");
+    let container3 = document.getElementById("imgContainer3");
+    let container4 = document.getElementById("imgContainer4");
+    let container5 = document.getElementById("imgContainer5");
+    let container6 = document.getElementById("imgContainer6");
+    let containerG = document.getElementById("imgContainer7");
+    container1.style.display = "none";
+    container2.style.display = "none";
+    container6.style.display = "none";
+    container7.style.display = "block";
+  }
+
+</script>
+<!-- 台北 -->
+<script>
+  function enlargeImage() {
+    // 呼叫js檔的function
+    openFullscreenImage(event)
+  }
+
+</script>
+<!-- 新北 -->
+<script>
+  function enlargeImage2() {
+    // 呼叫js檔的function
+    openFullscreenImage2(event)
+  }
+</script>
+<!-- 日本 -->
+<script>
+  function enlargeImage3() {
+    // 呼叫js檔的function
+    openFullscreenImage3(event)
+  }
+</script>
+<!-- 山海 -->
+<script>
+  function enlargeImage6() {
+    // 呼叫js檔的function
+    openFullscreenImage6(event)
+  }
+</script>
+
+<body>
+  <div class="container">
+    <h4 style="font-size:30px; ">Irene's photographs</h4>
+    <div class="jumbotron ">
+      <ul class="nav justify-content-center">
+        <li class="nav-item ">
+          <a class="nav-link" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/home.html"
+            target="_self">
+            HOME
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link aboutme" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/about.html"
+            target="_self" id="about-link">
+            ABOUT </a>
+        </li>
+        <!-- aria-expanded:表示展開狀態 預設是auto  先刪除-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" data-bs-toggle="dropdown" href="http://127.0.0.1:5502/irene17.html"
+            style="cursor: pointer;color:#807c7c">
+            SCENERY
+          </a>
+          <ul class="dropdown-menu" style="cursor: pointer">
+            <li onclick="showImages1('imgContainer1')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'" id="leopard">Taipei</li>
+            <li onclick="showImages2('imgContainer2')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">NewTaipei</li>
+            <li onclick="showImages6('imgContainer6')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Japan</li>
+              <li onclick="showImages7('imgContainer7')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Mountain&Sea</li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link aboutme" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/model.html"
+            target="_self" id="about-link">
+            MODEL </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            href="http://127.0.0.1:5502/animal.html" onclick="showImages5('imgContainer5')">CAT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            href="http://127.0.0.1:5502/map.html">MAP</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="imgContainer1"></div>
+  <div id="imgContainer2"></div>
+  <div id="imgContainer4"></div>
+  <div id="imgContainer6"></div>
+  <div id="imgContainer7"></div>
+
+  <!-- 輪播效果台北 -->
+  <div class="image-container" id="taipeiCarousel" style="display: none;z-index: 999;">
+    <div id="carouselExampleCaptions" class="carousel slide innerimg">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/風景/台北/IMG_9943.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <!-- 輪播放字幕地方 -->
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">地點:松山機場旁的飛機巷</p>
+          </div>
+
+        </div>
+
+        <div class="carousel-item ">
+          <img src="/img/風景/台北/IMG_9944.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">地點:世貿人行天橋上拍攝車軌</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- 輪播效果新北 -->
+  <div class="image-newtaipei" id="newTaipeiCarousel" style="display: none;z-index: 999;">
+    <div id="carouselExample" class="carousel slide innerimg">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/風景/新北/IMG_0001.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">永恆</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_0002.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">消縱即逝</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_0003.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">閃爍</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_0004.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:九份威遠廟</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_0005.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:九份</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_1037.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:淡水</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/新北/IMG_9298.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:烘爐地</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 輪播效果日本 -->
+  <div class="image-japan" id="japanCarousel" style="display: none;z-index: 999;">
+    <div id="japanExample" class="carousel slide innerimg">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/風景/日本/IMG_4550.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:立山黑部</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/日本/IMG_5777.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:日立海濱公園的紫藤花</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/日本/IMG_5821.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:白川鄉合掌村</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/日本/IMG_8606.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:立山黑部</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#japanExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#japanExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 輪播效果山海 -->
+  <div class="image-sea" id="seaCarousel" style="display: none;z-index: 999;">
+    <div id="seaExample" class="carousel slide innerimg">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/風景/山海/IMG_2004.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:小琉球</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2005.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:小琉球</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2006.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:花蓮吉安</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2008.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:宜蘭見晴懷古步道</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2009.JPG" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:宜蘭見晴懷古步道</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2010.jpg" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">拍攝地點:屏東高山神社</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2011.jpg" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">嘉義阿里山雲海</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2012.jpg" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">加拿大尼加拉瀑布</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/風景/山海/IMG_2013.jpg" class="d-block w-200" style="max-height: 400px;">
+          <div>
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">加拿大尼加拉瀑布</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#seaExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#seaExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+</body>
+
+</html>

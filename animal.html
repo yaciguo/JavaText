@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/irene17.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- <link rel="stylesheet" href="/css/newtaipei.css" /> -->
+</head>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<title></title>
+<script src="/js/all.js"></script>
+
+
+<script>
+
+  // 跳到主畫面
+  function homelink(containerId) {
+    var url = "http://127.0.0.1:5502/home.html";
+    window.open(url, "_self");
+  }
+  // 點選showImages4會跳到人像網頁
+  function showImages4(containerId) {
+    var url = "http://127.0.0.1:5502/model.html";
+    window.open(url, "_self");
+  }
+
+  // 點選showImages1會跳到台北網頁
+  function linkviewpage() {
+    var url = "http://127.0.0.1:5502/irene17.html";
+    window.open(url, "_self");
+  }
+
+  
+  // 動物 貓咪
+  function showImages5(containerId) {
+    let container5 = document.getElementById(containerId);
+    container5.innerHTML = '<img src="/img/動物/貓/IMG_1364.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1365.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1366.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1367.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1368.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1369.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1370.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1371.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1372.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1373.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1374.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1375.JPG"onclick="enlargeImage5(this)"><img src="/img/動物/貓/IMG_1376.JPG"onclick="enlargeImage5(this)">';
+
+  }
+
+</script>
+
+<!-- 貓咪 -->
+<script>
+  function enlargeImage5() {
+    // 呼叫js檔的function
+    openFullscreenImage5(event)
+  }
+</script>
+
+<body>
+
+  <div class="container">
+    <h4 style="font-size:30px; ">Irene's photographs</h4>
+    <div class="jumbotron ">
+      <ul class="nav justify-content-center">
+        <li class="nav-item ">
+          <a class="nav-link" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/home.html"
+            target="_self">
+            HOME
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link aboutme" style="cursor: pointer;color:#807c7c" href="http://127.0.0.1:5502/about.html"
+            target="_self" id="about-link">
+            ABOUT </a>
+        </li>
+        <!-- aria-expanded:表示展開狀態 預設是auto  先刪除-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown" data-bs-toggle="dropdown" onclick="linkviewpage()"
+            style="cursor: pointer;color:#807c7c">
+            SCENERY
+          </a>
+          <ul class="dropdown-menu" style="cursor: pointer">
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Taipei</li>
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">NewTaipei</li>
+            <li onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Japan</li>
+            <li onclick="showImages7('imgContainer7')" onmouseover="this.style.fontSize='1.2em'"
+              onmouseout="this.style.fontSize='1em';this.style.fontWeight='normal'">Mountain&Sea</li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link model" id="model" style="cursor: pointer;color:#807c7c" target="_self"
+            onclick="showImages4('imgContainer4')">MODEL </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            onclick="showImages5('imgContainer5')">CAT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link cat" style="cursor: pointer;color:#807c7c" target="_self"
+            href="http://127.0.0.1:5502/map.html">MAP</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="imgContainer5"></div>
+  <!-- 輪播效果貓咪 -->
+  <div class="image-cat" id="catCarousel" style="display: none;z-index: 999;">
+    <div id="catExample" class="carousel slide innerimg">
+       <!-- 圖片底下有幾個dot -->
+      <!-- <div class="carousel-indicators" >      
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#catExample" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      </div> -->
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/img/動物/貓/IMG_1364.jpg" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb; font-size: 20px;">嗜睡</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1365.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">想食</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1366.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">S型曲線</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1367.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">想喝手搖</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1368.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">仰望</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1369.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">凝視</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1370.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">向上</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1371.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">洗腳</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1372.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">練瑜珈</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1373.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">出示你的證件喵</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1374.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">塵囂看不見 你沉醉了沒</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1375.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">傘下凝望</p>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img src="/img/動物/貓/IMG_1376.JPG" class="d-block w-100" alt="taipeiA" style="max-height: 400px;">
+          <div >
+            <p style="color: slategray;font-weight:bold;font-family:DFKai-sb;font-size: 20px;">讓我一隻貓靜靜</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#catExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#catExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
